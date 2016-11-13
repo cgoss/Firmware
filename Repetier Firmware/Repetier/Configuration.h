@@ -41,7 +41,7 @@ Rostock MAX v3 = 5
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
 #define ADVANCED_USER 1 // Change to 1 to unlock full menus
-#define NUM_EXTRUDER 1
+#define NUM_EXTRUDER 2
 
 #include "pins.h"
 
@@ -56,7 +56,6 @@ Rostock MAX v3 = 5
 // ################## RAMBo Digipot Motor current control settings ################
 // Values 0-255 (RAMBO 135 = ~0.75A, 185 = ~1A)
 // use 140 for xyz and 130 for the E if using Kysan/AutomationTechnology motors and 175 xyz and 200 if using wantai motors
-#define MOTOR_CURRENT {140,140,140,130,0} 
 
 //################### Mini Rambo etc... motor current settings    #########
 //  Motor PWM current for mini rambo is X+Y on the same first value, Z on the next, then Extruder(s) on the last value
@@ -80,7 +79,7 @@ Rostock MAX v3 = 5
 // Uncomment the following line if you are using arduino compatible firmware made for Arduino version earlier then 1.0
 // If it is incompatible you will get compiler errors about write functions not beeing compatible!
 //#define COMPAT_PRE1
-#define MIXING_EXTRUDER 0
+#define MIXING_EXTRUDER 1
 #define DRIVE_SYSTEM 3
 #define BELT_PITCH 2
 #define PULLEY_TEETH 20
@@ -169,7 +168,7 @@ Rostock MAX v3 = 5
 #define EXT0_DESELECT_COMMANDS ""
 
 #if MOTHERBOARD == 302
-#define EXT0_EXTRUDER_COOLER_PIN -1 
+#define EXT0_EXTRUDER_COOLER_PIN -1
 #else
 #define EXT0_EXTRUDER_COOLER_PIN 7
 #endif
@@ -440,7 +439,7 @@ Rostock MAX v3 = 5
 #define END_EFFECTOR_HORIZONTAL_OFFSET 100
 #define CARRIAGE_HORIZONTAL_OFFSET 100
 
-#elif PRINTER == 5  // Rostock MAX v3 
+#elif PRINTER == 5  // Rostock MAX v3
 #define DELTA_DIAGONAL_ROD 290.8  // ball cup arms
 #define DELTA_MAX_RADIUS 200.0
 #define PRINTER_RADIUS 200.0
@@ -644,7 +643,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_TOLERANCE .1
 #if PRINTER == 1  //  Orion Delta w/ molded carriages and ball cup arms
 #define FEATURE_Z_PROBE 1
-#define Z_PROBE_SENSITIVITY  25 // 0-126 7 bit value  
+#define Z_PROBE_SENSITIVITY  25 // 0-126 7 bit value
 #define Z_PROBE_BED_DISTANCE 20
 #define Z_PROBE_PULLUP 1 //0
 #define Z_PROBE_ON_HIGH 0 //1
@@ -663,7 +662,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 
 #elif PRINTER == 2  // Rostock MAX v2 w/ molded carriages and ball cup arms
 #define FEATURE_Z_PROBE 1
-#define Z_PROBE_SENSITIVITY  25 // 0-126 7 bit value  
+#define Z_PROBE_SENSITIVITY  25 // 0-126 7 bit value
 #define Z_PROBE_BED_DISTANCE 20
 #define Z_PROBE_PULLUP 1
 #define Z_PROBE_ON_HIGH 0
@@ -682,7 +681,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 
 #elif PRINTER == 3  // ERIS Delta
 #define FEATURE_Z_PROBE 1
-#define Z_PROBE_SENSITIVITY  25 // 0-126 7 bit value  
+#define Z_PROBE_SENSITIVITY  25 // 0-126 7 bit value
 #define Z_PROBE_BED_DISTANCE 20
 #define Z_PROBE_PULLUP 1 //0
 #define Z_PROBE_ON_HIGH 0 //1
@@ -701,7 +700,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 
 #elif PRINTER == 4  // DropLit doesn't have a probe yet ;)
 #define FEATURE_Z_PROBE 0
-#define Z_PROBE_SENSITIVITY  25 // 0-126 7 bit value  
+#define Z_PROBE_SENSITIVITY  25 // 0-126 7 bit value
 #define Z_PROBE_BED_DISTANCE 20
 #define Z_PROBE_PULLUP 1 //0
 #define Z_PROBE_ON_HIGH 0 //1
@@ -720,7 +719,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 
 #elif PRINTER == 5  // Rostock MAX v3
 #define FEATURE_Z_PROBE 1
-#define Z_PROBE_SENSITIVITY  25 // 0-126 7 bit value  
+#define Z_PROBE_SENSITIVITY  25 // 0-126 7 bit value
 #define Z_PROBE_BED_DISTANCE 20
 #define Z_PROBE_PULLUP 1
 #define Z_PROBE_ON_HIGH 0
@@ -758,20 +757,20 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 #define Z_PROBE_Y3 142.68
 
 #elif PRINTER == 3  //  ERIS Delta
-#define Z_PROBE_X1 -54 
-#define Z_PROBE_Y1 -31 
-#define Z_PROBE_X2  54 
-#define Z_PROBE_Y2 -31 
+#define Z_PROBE_X1 -54
+#define Z_PROBE_Y1 -31
+#define Z_PROBE_X2  54
+#define Z_PROBE_Y2 -31
 #define Z_PROBE_X3   0
-#define Z_PROBE_Y3  65 
+#define Z_PROBE_Y3  65
 
 #elif PRINTER == 4  //  DROPLIT false values for firmware to compile
-#define Z_PROBE_X1 0 
-#define Z_PROBE_Y1 0 
+#define Z_PROBE_X1 0
+#define Z_PROBE_Y1 0
 #define Z_PROBE_X2 0
-#define Z_PROBE_Y2 0 
+#define Z_PROBE_Y2 0
 #define Z_PROBE_X3 0
-#define Z_PROBE_Y3 0 
+#define Z_PROBE_Y3 0
 
 #elif PRINTER == 5  //  Rostock MAX v3
 #define Z_PROBE_X1 -123.565
@@ -792,7 +791,7 @@ WARNING: Servos can draw a considerable amount of current. Make sure your system
 // ##############  SD Card Settings  #########################
 
 
-#ifndef SDSUPPORT 
+#ifndef SDSUPPORT
 #if PRINTER == 1 || PRINTER == 2 || PRINTER == 5
 #define SDSUPPORT 1
 #else
